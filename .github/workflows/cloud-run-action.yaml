@@ -25,17 +25,17 @@ jobs:
 
       - name: Build
         run: |
-          docker build -t us-east1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker-images-samples/helloworld:latest .
+          docker build -t us-east1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker-images-samples/hellogoogle:latest .
 
       - name: Push
         run: |
-          docker push us-east1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker-images-samples/helloworld:latest
+          docker push us-east1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker-images-samples/hellogoogle:latest
 
       - name: Deploy
         run: |
-          gcloud run deploy helloworld \
+          gcloud run deploy hellogoogle \
           --region us-east1 \
-          --image us-east1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker-images-samples/helloworld \
+          --image us-east1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker-images-samples/hellogoogle \
           --platform managed \
           --allow-unauthenticated \
           --project ${{ secrets.GCP_PROJECT_ID }}
