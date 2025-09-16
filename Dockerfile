@@ -1,6 +1,6 @@
 # Use the official gradle/Java 24 image to create a build artifact.
 # https://hub.docker.com/_/gradle
-FROM gradle:jdk17-alpine AS build
+FROM gradle:jdk24-alpine AS build
 
 # Copy local code to the container image.
 COPY --chown=gradle:gradle . /home/gradle/src
@@ -10,7 +10,7 @@ WORKDIR /home/gradle/src
 RUN gradle bootJar --no-daemon
 
 # https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
-FROM openjdk:17-jdk-slim
+FROM openjdk:24-jdk-slim
 
 RUN mkdir /app
 

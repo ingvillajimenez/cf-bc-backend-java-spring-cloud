@@ -9,7 +9,7 @@ version = '0.0.1-SNAPSHOT'
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(24)
 	}
 }
 
@@ -24,8 +24,8 @@ repositories {
 }
 
 ext {
-    set('springCloudGcpVersion', "5.7.0")
-    set('springCloudVersion', "2023.0.3")
+    set('springCloudGcpVersion', "7.3.0")
+    set('springCloudVersion', "2025.0.0")
 }
 
 dependencies {
