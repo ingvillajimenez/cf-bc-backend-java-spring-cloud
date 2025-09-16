@@ -1,0 +1,11 @@
+# Ignore common development dependencies and temporary files
+node_modules/
+.git/
+.gitignore
+*.log
+tmp/
+*.json
+
+# Exclude all markdown files except README.md
+*.md
+!README.md
